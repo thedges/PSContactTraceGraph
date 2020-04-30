@@ -1,0 +1,12 @@
+.chart-container {
+	position: relative;
+}
+
+.control-div {
+	position: absolute; top: 0px; right: 0px; z-index: 5; padding: 3px; 
+}
+
+.image-div {
+	vertical-align:middle; 
+    text-align:center;
+}
