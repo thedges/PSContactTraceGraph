@@ -14,6 +14,30 @@ Here are the main configuration options:
 | ------------- | ------------- |
 | Height | The height in pixels for the component |
 
+# Hierarchy ID
+
+Determining all records (cases in this demo) that are part of a hierarchy using the Parent field is not simple task. Normally this would require multiple SOQL calls to determine all related cases. A simple way to determine all cases in a hierarchy is to tag each case with the Id of the root node of the hierarchy. This can be done with formula field like the following. This is field that was created on the Case object that will set the root node Id on each case in the graph. Thus all one has to do is get the Id value for the case you are on and then query for all other cases that have that same id.
+
+```
+IF( ISBLANK(Parent.Id) , Id ,
+  IF( ISBLANK( Parent.Parent.Id ) , Parent.Id ,
+    IF( ISBLANK( Parent.Parent.Parent.Id ) , Parent.Parent.Id,
+      IF( ISBLANK( Parent.Parent.Parent.Parent.Id ) , Parent.Parent.Parent.Id, 
+        IF( ISBLANK( Parent.Parent.Parent.Parent.Parent.Id ) , Parent.Parent.Parent.Parent.Id, 
+          IF( ISBLANK( Parent.Parent.Parent.Parent.Parent.Parent.Id ) , Parent.Parent.Parent.Parent.Parent.Id, 
+            IF( ISBLANK( Parent.Parent.Parent.Parent.Parent.Parent.Parent.Id ) , Parent.Parent.Parent.Parent.Parent.Parent.Id, 
+              IF( ISBLANK( Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Id ) , Parent.Parent.Parent.Parent.Parent.Parent.Parent.Id, 
+                Parent.Parent.Parent.Parent.Parent.Parent.Parent.Parent.Id
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)
+```
+
 # Library Dependency
 
 This component utilizes the following:
