@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Covid_19_Risk_Assessment__c</fullName>
+        <externalId>false</externalId>
+        <label>Covid-19 Risk Assessment</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High Risk</fullName>
+                    <default>false</default>
+                    <label>High Risk</label>
+                </value>
+                <value>
+                    <fullName>Intermediate Risk</fullName>
+                    <default>false</default>
+                    <label>Intermediate Risk</label>
+                </value>
+                <value>
+                    <fullName>Low Risk</fullName>
+                    <default>false</default>
+                    <label>Low Risk</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>First_Responder__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this person a Dr, Nurse, Fire Fighter. Paramedic, Law Enforcement Office, or other First Responder</inlineHelpText>
+        <label>First Responder</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HasCOVID_19__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>identifies contacts that have tested positive for COVID-19</description>
+        <externalId>false</externalId>
+        <label>Has COVID-19</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Quarantined__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Quarantined</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

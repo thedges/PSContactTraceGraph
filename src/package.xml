@@ -5,7 +5,12 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>Case.HierarchyId__c</members>
+        <members>Case.HierarchyID__c</members>
+        <members>Case.Quarantine_Type__c</members>
+        <members>Contact.Covid_19_Risk_Assessment__c</members>
+        <members>Contact.First_Responder__c</members>
+        <members>Contact.HasCOVID_19__c</members>
+        <members>Contact.Quarantined__c</members>
         <name>CustomField</name>
     </types>
     <types>
