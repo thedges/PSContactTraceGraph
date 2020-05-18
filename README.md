@@ -38,24 +38,26 @@ IF( ISBLANK(Parent.Id) , Id ,
 )
 ```
 
-# Field Dependency
+# Field Dependency & Color Scheme
 
-This component depends on a few other fields to drive it's display and color scheme:
+For each card displayed in the hierarchy, the default background color is "blue". The current record you are on is highlighed with "grey" background.
+
+The card can include 3 icons (First Responder, Quarantined, or Do Not Call) which depends on following fields:
 
 | Field  | Logic |
 | ------------- | ------------- |
 | Contact.First_Responder__c | Boolean field if contact is first responder. If checked, First Responder icon is shown in lower left of card |
-| Contact.HasCOVID_19__c | Boolean field if contact is positive. If checked, the case icon is colored "red" |
 | Contact.Quarantined__c | Boolean field if contact is quarantined. If checked, Quarantined icon is shown in lower left of card |
 | Contact.DoNotCall | Boolean field if contact if contact should not be contacted by phone. If checked, Do Not Call icon is shown in lower left of card |
 
 This component shows case icon in top left of each card with certain color code. The color scheme is red for 'Tested Positive', yellow for 'Needs Contacting', and green for 'Contacted'. The logic is as follows:
 
-| Status  | Logic |
-| ------------- | ------------- |
-| Tested Positive (Red) | c.Contact.HasCOVID_19__c __OR__ c.Status == 'Tested Positive' |
-| Needs Contacting (Yellow) | c.Status == 'Left Message' __OR__ c.Status == 'New' __OR__ c.Status == 'Could Not Contact'  |
-| Contacted (Green) | ...else if not any of above |
+| Color |Status  | Logic |
+| --- | ------------- | ------------- |
+| Red | Tested Positive | c.Contact.HasCOVID_19__c __OR__ c.Status == 'Tested Positive' |
+| Yellow | Needs Contacting | c.Status == 'Left Message' __OR__ c.Status == 'New' __OR__ c.Status == 'Could Not Contact'  |
+| Green | Contacted | ...else if not any of above |
+
 
 # Library Dependency
 
