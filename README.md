@@ -53,9 +53,9 @@ This component shows case icon in top left of each card with certain color code.
 
 | Status  | Logic |
 | ------------- | ------------- |
-| Tested Positive | c.Contact.HasCOVID_19__c __OR__ c.Status == 'Tested Positive' |
-| Needs Contacting | c.Status == 'Left Message' __OR__ c.Status == 'New' __OR__ c.Status == 'Could Not Contact'  |
-| Contacted | ...else if not any of above |
+| Tested Positive (Red) | c.Contact.HasCOVID_19__c __OR__ c.Status == 'Tested Positive' |
+| Needs Contacting (Yellow) | c.Status == 'Left Message' __OR__ c.Status == 'New' __OR__ c.Status == 'Could Not Contact'  |
+| Contacted (Green) | ...else if not any of above |
 
 # Library Dependency
 
